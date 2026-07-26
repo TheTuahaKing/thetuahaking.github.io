@@ -158,3 +158,62 @@ function showMessage() {
 </script>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Support Message</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #messageBox {
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: none; /* initially hidden */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<button onclick="showMessage()">Open My Message ✨</button>
+
+<div id="messageBox">
+  Don't be sad. Look here — I'm with you. <br>
+  Never think you're alone; I'm always here to support you.<br>
+  Share your feelings with me, and I will do my best to make you smile.<br>
+  You're not alone in this journey.
+</div>
+
+<script>
+  function showMessage() {
+    document.getElementById('messageBox').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
