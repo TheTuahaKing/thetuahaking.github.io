@@ -43,6 +43,19 @@ h1{
   box-shadow:0 0 25px #ffd700;
 }
 
+/* Specific styling for the Secret Crypt Card */
+.secret-card {
+  background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(75,50,0,0.4));
+  border: 2px dashed #ffd700;
+}
+
+/* Specific styling for the Friendship Gift Box */
+.gift-card {
+  background: linear-gradient(135deg, rgba(75,50,0,0.3), rgba(0,0,0,0.6));
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.4);
+}
+
 h2{
   color:#ffd700;
 }
@@ -148,14 +161,14 @@ Keep believing in yourself, keep growing, and keep shining. 👑
 </p>
 </div>
 
-<!-- Card 4: Surprise Button Card -->
+<!-- Card 4: When You Feel Sad -->
 <div class="card">
 <h2>🌧️ When You Feel Sad 🌧️</h2>
 <p>
-If you ever feel sad, click here 💛
+If you ever feel down, click here 💛
 </p>
 
-<button onclick="showMessage()" style="
+<button onclick="showSadMessage()" style="
 background:#ffd700;
 color:#000;
 border:none;
@@ -166,10 +179,84 @@ font-weight:bold;">
 Open My Message ✨
 </button>
 
-<p id="message" style="display:none; margin-top:25px; font-size: 20px; color: #ffd700; border-top: 1px dashed #ffd700; padding-top: 20px;">
+<p id="sadMessage" style="display:none; margin-top:25px; font-size: 20px; color: #ffd700; border-top: 1px dashed #ffd700; padding-top: 20px;">
 Don't be sad ❤️<br>
-I am with you and I am always here to support you.<br>
-Whenever you feel low, share your feelings with me and I will try my best to bring a smile back to your face. ✨
+I am right here with you, and I am always ready to support you.<br>
+Whenever you feel low, just share your thoughts with me, and I will do my absolute best to bring that beautiful smile back to your face! ✨
+</p>
+</div>
+
+<!-- Card 5: When You Feel Alone -->
+<div class="card">
+<h2>🌌 When You Feel Alone 🌌</h2>
+<p>
+If the world feels a bit too quiet or heavy tonight, click here 💛
+</p>
+
+<button onclick="showAloneMessage()" style="
+background:#ffd700;
+color:#000;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;">
+I Am Here ✨
+</button>
+
+<p id="aloneMessage" style="display:none; margin-top:25px; font-size: 20px; color: #ffd700; border-top: 1px dashed #ffd700; padding-top: 20px;">
+Listen to me... ❤️<br>
+You are never alone because you always have me by your side. Never feel lonely.<br>
+I am here for you at any hour. Quickly text me or give me a call, I am waiting for you! 📞💬
+</p>
+</div>
+
+<!-- Card 6: Secret Message Card (Option 1 Inside) -->
+<div class="card secret-card">
+<h2>🔒 Top Secret Message 🔒</h2>
+<p>
+This section is strictly encrypted. Only for your eyes 🤫
+</p>
+
+<button onclick="showSecretMessage()" style="
+background:#000;
+color:#ffd700;
+border:2px solid #ffd700;
+padding:15px 30px;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;">
+Unlock Secret Message 🔑
+</button>
+
+<p id="secretMessage" style="display:none; margin-top:25px; font-size: 20px; color: #ffd700; border-top: 1px dashed #ffd700; padding-top: 20px; font-style: italic; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 15px;">
+"Sometimes I look back and realize how lucky I am that our paths crossed. In a world full of temporary people, your loyalty, your kindness, and your presence have been my constant safe space. Thank you for never judging me, for always listening, and for simply being the amazing soul you are. No matter how much time passes or where life takes us, remember that you are truly irreplaceable to me. I've always got your back, no matter what." ❤️✨
+</p>
+</div>
+
+<!-- Card 7: NEW FRIENDSHIP GIFT CARD -->
+<div class="card gift-card">
+<h2>🎁 A Special Friendship Gift 🎁</h2>
+<p>
+I have wrapped a little something special just for you. Click below to unwrap it 💛
+</p>
+
+<button onclick="showGiftMessage()" style="
+background: linear-gradient(45deg, #ffd700, #ffaa00);
+color:#000;
+border:none;
+padding:15px 35px;
+border-radius:30px;
+font-size:19px;
+font-weight:bold;
+box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);">
+Open Your Gift 🎀
+</button>
+
+<p id="giftMessage" style="display:none; margin-top:25px; font-size: 22px; color: #fff; border-top: 2px solid #ffd700; padding-top: 20px; background: rgba(255, 215, 0, 0.15); padding: 20px; border-radius: 20px; text-shadow: 0 0 10px rgba(255,215,0,0.5);">
+Here is your best friend for my special friend... ❤️<br><br>
+<span style="color: #ffd700; font-weight: bold; font-size: 24px;">Bundle of prayers for you forever. 🙏✨</span><br><br>
+It's a precious gift forever! 👑🎁
 </p>
 </div>
 
@@ -177,7 +264,6 @@ Whenever you feel low, share your feelings with me and I will try my best to bri
 <div class="footer">
   <p>✨ A special space created with care ✨</p>
   <div class="social-links" style="margin-top: 15px;">
-    <!-- Aap yahan '#' hata kar apne real social links laga sakti hain -->
     <a href="#">Instagram</a> | 
     <a href="#">YouTube</a> | 
     <a href="#">Contact</a>
@@ -186,17 +272,30 @@ Whenever you feel low, share your feelings with me and I will try my best to bri
 
 </div>
 
-<!-- Background soft tone ke liye ek audio file (Optional) -->
+<!-- Background soft sound tone -->
 <audio id="bgMusic" src="https://mixkit.co"></audio>
 
 <script>
-function showMessage(){
-  // Message dikhane ke liye
-  document.getElementById("message").style.display="block";
-  
-  // Choti si click sound chalane ke liye
-  var audio = document.getElementById("bgMusic");
-  audio.play();
+function showSadMessage(){
+  document.getElementById("sadMessage").style.display="block";
+  document.getElementById("bgMusic").play();
+}
+
+function showAloneMessage(){
+  document.getElementById("aloneMessage").style.display="block";
+  document.getElementById("bgMusic").play();
+}
+
+/* Script for Secret Box */
+function showSecretMessage(){
+  document.getElementById("secretMessage").style.display="block";
+  document.getElementById("bgMusic").play();
+}
+
+/* Script for Friendship Gift Box */
+function showGiftMessage(){
+  document.getElementById("giftMessage").style.display="block";
+  document.getElementById("bgMusic").play();
 }
 </script>
 
