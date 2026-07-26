@@ -7,7 +7,7 @@
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#000000,#4b3200);
+  background:linear-gradient(135deg,#000000,#2a1d02, #000000);
   color:white;
   text-align:center;
 }
@@ -17,68 +17,109 @@ body{
 }
 
 .crown{
-  font-size:80px;
+  font-size:75px;
   animation:float 2s infinite alternate;
+  margin-bottom: 10px;
+}
+
+.profile-box {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 10px auto 25px auto;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 30px #ffd700, inset 0 0 20px rgba(255,215,0,0.5);
+  transition: transform 0.5s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 0 45px #ffd700;
 }
 
 h1{
   color:#ffd700;
-  font-size:45px;
-  text-shadow:0 0 20px #ffd700;
+  font-size:48px;
+  text-shadow:0 0 25px #ffd700;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .welcome{
   font-size:24px;
   margin:25px;
-  color:white;
+  color: #e5e7eb;
+  font-style: italic;
 }
 
 .card{
-  background:rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   max-width:600px;
-  margin:30px auto;
-  padding:30px;
-  border-radius:25px;
-  border:2px solid #ffd700;
-  box-shadow:0 0 25px #ffd700;
+  margin:35px auto;
+  padding:35px;
+  border-radius:30px;
+  border:1px solid rgba(255, 215, 0, 0.4);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(255, 215, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Specific styling for the Secret Crypt Card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
 .secret-card {
-  background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(75,50,0,0.4));
+  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(42,29,2,0.6));
   border: 2px dashed #ffd700;
 }
 
-/* Specific styling for the Friendship Gift Box */
 .gift-card {
-  background: linear-gradient(135deg, rgba(75,50,0,0.3), rgba(0,0,0,0.6));
+  background: linear-gradient(135deg, rgba(42,29,2,0.4), rgba(0,0,0,0.8));
   border: 2px solid #ffcc00;
-  box-shadow: 0 0 35px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
+}
+
+/* New custom style for the reveal card */
+.reveal-card {
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(60,40,0,0.5));
+  border: 2px solid #ffd700;
 }
 
 h2{
   color:#ffd700;
+  font-size: 26px;
+  letter-spacing: 0.5px;
 }
 
 p{
   font-size:19px;
   line-height:1.8;
+  color: #f3f4f6;
 }
 
 button {
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px #ffd700;
+  box-shadow: 0 0 20px #ffd700;
 }
 
 .footer {
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 215, 0, 0.3);
+  margin-top: 70px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
   color: #ffd700;
   font-size: 18px;
 }
@@ -86,7 +127,7 @@ button:hover {
 .social-links a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 12px;
   font-weight: bold;
   transition: color 0.3s;
 }
@@ -111,7 +152,13 @@ button:hover {
 
 <div class="container">
 
+<!-- Crown Icon -->
 <div class="crown">👑</div>
+
+<!-- Profile Box -->
+<div class="profile-box">
+  <img src="tuaha.jpg" alt="The Tuaha King" class="profile-img">
+</div>
 
 <h1>The Tuaha King Official</h1>
 
@@ -158,6 +205,29 @@ Every person has a different story, and every journey has something special to s
 </p>
 <p>
 Keep believing in yourself, keep growing, and keep shining. 👑
+</p>
+</div>
+
+<!-- NEW CARD: The King Guessing Game -->
+<div class="card reveal-card">
+<h2>🤔 A Quick Question... </h2>
+<p>
+There is something I have been meaning to tell you... You know, I have a friend who is just like a true King. 👑
+</p>
+
+<button onclick="revealKingName()" style="
+background:#ffd700;
+color:#000;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;">
+Who is it? 👀
+</button>
+
+<p id="kingRevealMessage" style="display:none; margin-top:25px; font-size: 26px; color: #ffd700; font-weight: bold; text-shadow: 0 0 15px #ffd700; border-top: 1px dashed #ffd700; padding-top: 20px;">
+It's you, Tuaha! 👑✨
 </p>
 </div>
 
@@ -211,7 +281,7 @@ I am here for you at any hour. Quickly text me or give me a call, I am waiting f
 </p>
 </div>
 
-<!-- Card 6: Secret Message Card (Option 1 Inside) -->
+<!-- Card 6: Secret Message Card -->
 <div class="card secret-card">
 <h2>🔒 Top Secret Message 🔒</h2>
 <p>
@@ -234,7 +304,7 @@ Unlock Secret Message 🔑
 </p>
 </div>
 
-<!-- Card 7: NEW FRIENDSHIP GIFT CARD -->
+<!-- Card 7: Friendship Gift Card -->
 <div class="card gift-card">
 <h2>🎁 A Special Friendship Gift 🎁</h2>
 <p>
@@ -272,10 +342,14 @@ It's a precious gift forever! 👑🎁
 
 </div>
 
-<!-- Background soft sound tone -->
 <audio id="bgMusic" src="https://mixkit.co"></audio>
 
 <script>
+function revealKingName(){
+  document.getElementById("kingRevealMessage").style.display="block";
+  document.getElementById("bgMusic").play();
+}
+
 function showSadMessage(){
   document.getElementById("sadMessage").style.display="block";
   document.getElementById("bgMusic").play();
@@ -286,13 +360,11 @@ function showAloneMessage(){
   document.getElementById("bgMusic").play();
 }
 
-/* Script for Secret Box */
 function showSecretMessage(){
   document.getElementById("secretMessage").style.display="block";
   document.getElementById("bgMusic").play();
 }
 
-/* Script for Friendship Gift Box */
 function showGiftMessage(){
   document.getElementById("giftMessage").style.display="block";
   document.getElementById("bgMusic").play();
