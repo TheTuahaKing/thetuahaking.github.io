@@ -8,7 +8,6 @@ body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
   background:linear-gradient(135deg,#000000,#4b3200);
-  
   color:white;
   text-align:center;
 }
@@ -53,6 +52,36 @@ p{
   line-height:1.8;
 }
 
+button {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffd700;
+}
+
+.footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
+  color: #ffd700;
+  font-size: 18px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffd700;
+}
+
 @keyframes float{
   from{
     transform:translateY(0);
@@ -60,12 +89,6 @@ p{
   to{
     transform:translateY(-15px);
   }
-}
-
-.footer{
-  margin-top:40px;
-  color:#ffd700;
-  font-size:18px;
 }
 </style>
 
@@ -83,86 +106,99 @@ p{
 ✨ Welcome to a special space ✨
 </div>
 
-
+<!-- Card 1 -->
 <div class="card">
 <h2>✨ A Beautiful Moment ✨</h2>
-
 <p>
 There is something truly special about the moment when you unexpectedly meet a wonderful person.
 </p>
-
 <p>
 Among so many people, finding someone who stands out, someone who feels different and special, is a rare blessing.
 </p>
-
 <p>
 And there is Tuaha — someone who stands out among many, a person whose presence feels truly special and different. 👑
 </p>
-
 </div>
 
-
+<!-- Card 2 -->
 <div class="card">
 <h2>🌟 A Special Note 🌟</h2>
-
 <p>
 Some people come into our lives and make ordinary moments feel special.
 </p>
-
 <p>
 A unique personality, a kind heart, and a beautiful presence can make someone truly unforgettable. ✨
 </p>
-
 <p>
 Keep shining and keep being the amazing person you are. 👑
 </p>
-
 </div>
+
+<!-- Card 3 -->
 <div class="card">
-
 <h2>🌟 About This Space 🌟</h2>
-
 <p>
 This is a place created to celebrate uniqueness, kindness and a beautiful personality.
 </p>
-
 <p>
 Every person has a different story, and every journey has something special to share. ✨
 </p>
-
 <p>
 Keep believing in yourself, keep growing, and keep shining. 👑
 </p>
-
 </div>
 
+<!-- Card 4: Surprise Button Card -->
+<div class="card">
+<h2>🌧️ When You Feel Sad 🌧️</h2>
+<p>
+If you ever feel sad, click here 💛
+</p>
+
+<button onclick="showMessage()" style="
+background:#ffd700;
+color:#000;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;">
+Open My Message ✨
+</button>
+
+<p id="message" style="display:none; margin-top:25px; font-size: 20px; color: #ffd700; border-top: 1px dashed #ffd700; padding-top: 20px;">
+Don't be sad ❤️<br>
+I am with you and I am always here to support you.<br>
+Whenever you feel low, share your feelings with me and I will try my best to bring a smile back to your face. ✨
+</p>
+</div>
+
+<!-- Footer Section -->
 <div class="footer">
-✨ A special space created with care ✨
+  <p>✨ A special space created with care ✨</p>
+  <div class="social-links" style="margin-top: 15px;">
+    <!-- Aap yahan '#' hata kar apne real social links laga sakti hain -->
+    <a href="#">Instagram</a> | 
+    <a href="#">YouTube</a> | 
+    <a href="#">Contact</a>
+  </div>
 </div>
 
 </div>
+
+<!-- Background soft tone ke liye ek audio file (Optional) -->
+<audio id="bgMusic" src="https://mixkit.co"></audio>
+
+<script>
+function showMessage(){
+  // Message dikhane ke liye
+  document.getElementById("message").style.display="block";
+  
+  // Choti si click sound chalane ke liye
+  var audio = document.getElementById("bgMusic");
+  audio.play();
+}
+</script>
 
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Support Message</title>
-<script>
-function showMessage() {
-  document.getElementById('message').style.display = 'block';
-}
-</script>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Support Message</title>
-<style>
-  body {
